@@ -34,20 +34,18 @@
 <body>
     <div class="card">
         <img src="otk.jpg" alt="Открытка 'Сияй'">
+         <button class="play-btn" onclick="playMusic()">🎵 Включить музыку</button>
     </div>
     
-    <audio id="bg-music" autoplay loop>
+    <audio id="bg-music" loop>
         <source src="dj-anemia-crier-sixnite-empty-funk обрез.mp3" type="audio/mpeg">
         Ваш браузер не поддерживает аудио.
     </audio>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            let audio = document.getElementById('bg-music');
-            audio.play().catch(error => {
-                console.log("Автовоспроизведение заблокировано. Пользователю нужно взаимодействовать со страницей.");
-            });
-        });
+     <script>
+        function playMusic() {
+            document.getElementById('bg-music').play();
+        }
     </script>
 </body>
 </html>
