@@ -52,32 +52,15 @@
             background: rgba(0, 0, 0, 0.9);
         }
         .player {
-            width: 1000px;
+            width: 400px;  /* Уменьшена ширина плеера */
             background: white;
-            padding: 20px;
+            padding: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             border-radius: 10px;
             display: flex;
             flex-direction: column;
             align-items: center;
             margin-top: 20px;
-        }
-        .controls {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            margin-top: 10px;
-        }
-        .controls button {
-            background-color: #ff4081;
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .controls button:hover {
-            background-color: #d81b60;
         }
         .progress-bar {
             width: 100%;
@@ -102,12 +85,12 @@
 
     <div class="card">
         <img src="otk.jpg" alt="Открытка 'Сияй'">
-        <button class="play-btn" id="play-btn">🎵 Включить музыку</button>
+        <button class="play-btn" id="play-btn">Добавить сияния✨</button>
     </div>
 
     <div class="player">
         <audio id="audio" src="dj-anemia-crier-sixnite-empty-funk.mp3" preload="auto"></audio>
-        <button id="playPauseBtn">🎵 Воспроизвести</button>
+        <!-- Убрали кнопку "Воспроизвести" -->
 
         <div class="progress-bar" id="progressBar">
             <span id="progress"></span>
@@ -118,7 +101,7 @@
 
     <script>
         let music = document.getElementById('audio');
-        let playButton = document.getElementById('playPauseBtn');
+        let playButton = document.getElementById('play-btn');
         const progressBar = document.getElementById('progressBar');
         const progress = document.getElementById('progress');
         const volumeControl = document.getElementById('volumeControl');
@@ -127,10 +110,10 @@
         playButton.addEventListener('click', () => {
             if (music.paused) {
                 music.play();
-                playButton.textContent = '⏸ Пауза';
+                playButton.textContent = '⏸ Остановить музыку';
             } else {
                 music.pause();
-                playButton.textContent = '🎵 Воспроизвести';
+                playButton.textContent = '🎵 Включить музыку';
             }
         });
 
@@ -151,19 +134,6 @@
         // Volume control functionality
         volumeControl.addEventListener('input', () => {
             music.volume = volumeControl.value;
-        });
-
-        // Play/Pause for music button from card
-        let playMusicButton = document.getElementById('play-btn');
-
-        playMusicButton.addEventListener('click', function () {
-            if (music.paused) {
-                music.play();
-                playMusicButton.textContent = '⏸ Остановить музыку';
-            } else {
-                music.pause();
-                playMusicButton.textContent = '🎵 Включить музыку';
-            }
         });
     </script>
 </body>
