@@ -34,7 +34,7 @@
 <body>
     <div class="card">
         <img src="otk.jpg" alt="Открытка 'Сияй'">
-         <button class="play-btn" onclick="playMusic()">🎵 Включить музыку</button>
+        <button class="play-btn" onclick="playMusic()">🎵 Включить музыку</button>
     </div>
     
     <audio id="bg-music" loop>
@@ -42,9 +42,14 @@
         Ваш браузер не поддерживает аудио.
     </audio>
 
-     <script>
+    <script>
         function playMusic() {
-            document.getElementById('bg-music').play();
+            var audio = document.getElementById('bg-music');
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
         }
     </script>
 </body>
