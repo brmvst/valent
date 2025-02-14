@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Открытка "Сияй"</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f8f8f8;
+            text-align: center;
+        }
+        .card {
+            position: relative;
+            width: 900px;
+            height: 900px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="otk.jpg" alt="Открытка 'Сияй'">
+    </div>
+    
+    <audio id="bg-music" autoplay loop>
+        <source src="dj-anemia-crier-sixnite-empty-funk обрез.mp3" type="audio/mpeg">
+        Ваш браузер не поддерживает аудио.
+    </audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let audio = document.getElementById('bg-music');
+            audio.play().catch(error => {
+                console.log("Автовоспроизведение заблокировано. Пользователю нужно взаимодействовать со страницей.");
+            });
+        });
+    </script>
+</body>
+</html>
